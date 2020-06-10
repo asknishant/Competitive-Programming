@@ -18,7 +18,7 @@ int makingChange(int arr[] , int c) {
 }
 int main(void) {
 
-  int arr[] = {1,2,5};
+  int arr[] = {1,2,5};   //Best case(Minimum number of coins) is when the array is sorted in ascending order and worst case is when arrray is in descending order.
   int c;  cin >> c;
 
   cout << "Number of change coins are" << makingChange(arr,c);
