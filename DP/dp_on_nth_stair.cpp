@@ -48,6 +48,21 @@ int bottomUp(int n) {
   return dp[n];
 }  
 
+//O(n) 
+int bestWay(int n, int k) {
+  int *dp = new int[100];
+  dp[0] = 1;
+  dp[1] = 1;
+  dp[2] = 2;
+  dp[3] = 4; // k = 3.we need value upto 3.
+  for(int step=1;step<=n;step++) {
+    //dp[step] = 0;
+    //The recurrence can be reduced to dp[n+1] = 2*dp[n] - dp[n-k].
+    if(step >= k)
+    dp[step+1] = 2*dp[step] - dp[step-k];
+  }
+  return dp[n];
+}
 
 //for a random k.(Recursion)
 int ways2(int n, int k) {
@@ -74,6 +89,7 @@ int main() {
   cout << ways(n) << endl;
   cout << topBottom(n, dp) << endl;
   cout << bottomUp(n) << endl;
-  cout << ways2(n, 3);
+  cout << ways2(n, 3) << endl;
+  cout <<  bestWay(n,3);
   return 0;
 }
