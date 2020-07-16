@@ -75,8 +75,8 @@ node* revRec(node* head) {
 }
 
 //Runner's technique to find the middle elment of the linked list.
-node* findMiddle(node* head) {
-  node* fast = head;
+node* findMiddle(node* head) {  
+  node* fast = head->next;  //Always point fast to head->next other wise mergeSort will give infinite loop.Dry run with two nodes to check.
   node* slow = head;
 
   if(head==NULL or head->next ==NULL) {
