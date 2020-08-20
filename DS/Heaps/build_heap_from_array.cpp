@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-
+//O(NlogN)
 //Building a max heap here
 void buildHeap(vector<int> &v) {
   for(int i=1;i<v.size();i++) {
