@@ -2,6 +2,7 @@
 #include <vector>
 using namespace std;
 
+//Building a max heap here
 void buildHeap(vector<int> &v) {
   for(int i=1;i<v.size();i++) {
     int idx = i;
