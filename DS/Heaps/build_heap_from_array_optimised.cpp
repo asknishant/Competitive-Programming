@@ -28,7 +28,7 @@ void heapify(vector<int> &v,int idx) {
     }
   }
 void build_heap_optimised(vector<int> &v) {
-  //First leaf node is v.size()/2
+  //parent of the last leaf node is v.size()/2
   for(int i=v.size()-1/2;i>0;i--) {
     heapify(v,i);
   } 
