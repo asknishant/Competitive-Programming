@@ -29,22 +29,22 @@ public:
         queue<T> q;
         map<T,bool> visited;
 
-        cout << src <<" ";
         q.push(src);
         visited[src] = true;   
 
         while(!q.empty()) {
             T node = q.front();
             q.pop();
+            cout << node << " ";
+            
             for(auto nbr:mp[node]) {
-                q.push(nbr);
-                cout << nbr << " ";
-                visited[nbr] = true;
+                if(!visited[nbr]) {
+                   q.push(nbr);
+                   visited[nbr] = true;
+                }
             }
         }
     }
-
-
 };
 int main( ) {
 
