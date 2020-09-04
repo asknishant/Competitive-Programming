@@ -17,11 +17,9 @@ public:
         v = V;
     }
 
-    void addEdge(int x,int y, bool bidir = true) {
+    void addEdge(int x,int y) {
         mp[x].push_back(y);
-        // if(bidir) {
-        //     mp[y].push_back(x);
-        // }
+        mp[y].push_back(x);   
     }
 
     void bfs(T src) {
