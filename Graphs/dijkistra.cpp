@@ -2,6 +2,7 @@
 //Single source shortest path
 //O(N*2)-For complete graph as each vertex is going to relax all n veticces if |V| = n
 
+//IT is greedy approach.It may work or may not for negative weights
 //IF u is a node pointing to v then relaxation = (d[u]+c[u,v] < d[v]) => d[v] = d[u]+c[u,v].
 
 #include <bits/stdc++.h>
