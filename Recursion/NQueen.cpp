@@ -41,11 +41,16 @@ bool solveNQueen(int board[10][10], int i, int n) { //i is the current row and n
     if(i==n) {
         for(int k=0;k<n;k++) {
             for(int j=0;j<n;j++) {
-                cout << board[k][j] << " ";
+                if(board[k][j] == 1)
+                    cout << "Q ";
+                else
+                    cout << "_ ";
             }
             cout << endl;
         }
-        return true;
+
+        cout << endl << endl;
+        return true;    //Removing this line will give all valid configurations.
     }
 
     //Recursive case.
