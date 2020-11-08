@@ -39,6 +39,39 @@ void printTree(node* root) {
 
 }
 
+/*
+Method 2
+  vector<int> rightSideView(TreeNode* root) {
+        
+        vector<int> v;
+        if(root == NULL)    return v;
+        
+        //Sub tree exists.Run bfs
+        queue<TreeNode*> q;
+        q.push(root);
+        
+        while(!q.empty()) {
+            int size = q.size();
+          
+            //This is the level order traversal.
+            for(int i=0;i<size;i++) {
+                TreeNode *node = q.front();
+                q.pop();
+            
+                if(i == 0) {
+                    v.push_back(node->val);
+                }
+                if(node->right != NULL) q.push(node->right);
+                if(node->left != NULL)  q.push(node->left);
+            }
+        }
+        
+        return v;
+    }
+
+
+*/
+
 void rightView(node* root, int level) {
   
   if(root == NULL) {
