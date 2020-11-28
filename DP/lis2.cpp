@@ -32,7 +32,7 @@ int lis(int *arr,int n) {
     }
 
     int lis = 0;
-    for(int i=1;i<n;i++) {
+    for(int i=1;i<=n;i++) {
         if(dp[i] != INT_MAX)    lis = i;
     }
     return lis;
