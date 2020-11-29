@@ -1,5 +1,21 @@
 //This is slight variation of matrix chain multiplication
 
+
+/*
+
+f(i,j) = f(i,k) + f(k+1,j) + csum(i,k)*csum(k+1,j)
+
+See here
+Assume
+A B C D E
+was combined by Harry and finally we have X Y left here X is (A+B+C)%100 and Y is (D+E)%100
+
+Now we combine X & Y we get XY => (A+B+C)%100*(D+E)%100
+Correct
+No move a step back ,we must have reach to X & Y by solving them individually
+So Answer is solve(X)+solve(Y) + XY
+*/
+
 #include<bits/stdc++.h>
 using namespace std;
 
