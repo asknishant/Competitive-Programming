@@ -1,0 +1,65 @@
+#include<bits/stdc++.h>
+#define ll long long
+using namespace std;
+
+
+void inlineDebug() {
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt","r",stdin);
+        freopen("output.txt","w",stdout);
+    #endif
+}
+
+void profit(int prices[],int weight[],int n,int s)  {
+
+    vector<vector<ll> > dp(10,vector<ll>(10,0));
+
+    for(int item=1;item<=n;item++) {
+        for(int w=1;w<=s;w++) {
+
+            if(w == 0 or item == 0) {
+                dp[item][w] = 0;
+            }
+            //We will have two cases.We will only take the maximum of the two.
+            // max(price[curr item] + price[rem weight],price of previously calculated answer for this w)
+
+            if(w-weight[item-1] >= 0) {
+                dp[item][w] = max(prices[item-1] + dp[item-1][w-weight[item-1]], dp[item-1][w]);
+            }
+            else {
+                dp[item][w] = dp[item-1][w];
+            }
+        }
+    }
+    cout << dp[n][s] << endl;
+
+
+    for(int t=0;t<dp.size();t++) {
+        for(int k=0;k<dp[0].size();k++) {
+            cout << dp[t][k] << " ";
+        }
+        cout << endl;
+    }
+} 
+int main() {
+
+    inlineDebug();
+    int n,s;
+    cin >> n >> s;
+
+
+    int weight[n],prices[n];
+    for(int i=0;i<n;i++) {
+        int x;  cin >> x;
+        weight[i] = x;
+    }
+
+    for(int i=0;i<n;i++) {
+        int x;  cin >> x;
+        prices[i] = x;
+    }
+
+    profit(prices,weight,n,s) ;
+   
+    return 0;   
+}
