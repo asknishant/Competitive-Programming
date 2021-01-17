@@ -57,7 +57,7 @@ public:
 
                     //In the set/priority queue updation of the node is not possible.
                     T dest = childPair.first;
-                    auto f = s.find(make_pair(dist[node],dest));
+                    auto f = s.find(make_pair(dist[dest],dest));
                     if(f!=s.end()) {//If the node has been found..
                         s.erase(f);
                     }
