@@ -38,7 +38,7 @@ public:
         return false;
     }
 
-    bool checkCycleBfs() {
+    bool checkCycleDfs() {
         bool visited[V];
         bool stack[V];
 
@@ -64,7 +64,7 @@ int main() {
     g.addEdge(3,4,false);
     g.addEdge(4,5,false);
 
-    if(g.checkCycleBfs()) {
+    if(g.checkCycleDfs()) {
         cout << "Cycle is present";
     }else {
         cout << "Cycle not present";
