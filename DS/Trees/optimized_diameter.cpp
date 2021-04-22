@@ -123,7 +123,7 @@ int diameter(node* root) {
   int op2 = diameter(root->left);
   int op3 = diameter(root->right);
 
-  return max(op1,max(op2,op3));
+  return max(op1 + 1,max(op2,op3));
 }
 
 //Optimized diameter O(N).
