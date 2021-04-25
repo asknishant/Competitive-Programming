@@ -1,6 +1,8 @@
 
 //Sum of two numbers using two pointers.
 //Given an array A check whether the sum of two numbers equal to x is present or not inside the array.
+
+//Four sum link
 //This gives a complexity of O(n^3).Though we can find a better soln with O(n^2logn).(https://www.geeksforgeeks.org/find-four-elements-that-sum-to-a-given-value-set-2/?ref=lbp)
 
 #include <bits/stdc++.h>
