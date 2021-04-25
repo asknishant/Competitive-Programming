@@ -18,9 +18,8 @@ int two_sum(int a[],int j,int k, int x)
         }else{
             return true;
         }
-        return false;
     }
-    
+    return false;
 }
 int main(void) {
     
